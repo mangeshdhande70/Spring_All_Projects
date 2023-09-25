@@ -1,0 +1,7 @@
+com\mangesh\fomobject\User.class
+com\mangesh\fomobject\Category.class
+com\mangesh\fomobject\Order.class
+com\mangesh\fomobject\Product.class
+com\mangesh\fomobject\Address.class
+com\mangesh\fomobject\Order$OrderBuilder.class
+com\mangesh\OnlineFoodObjectServiceApplication.class

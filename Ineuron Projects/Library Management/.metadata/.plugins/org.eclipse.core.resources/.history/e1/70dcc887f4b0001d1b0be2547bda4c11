@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" type="text/css" href="./css/book.css">
+</head>
+<body>
+
+
+    <form  method="POST" action="./book" class="flex-container">
+        <div class="item">
+            <img src="./Images/atomicHabit.jpg" alt="Atomic habit">
+            <button name="book1" value="Atomic Habit" class="btn"  type="submit">Get</button>
+        </div>
+        <div class="item">
+            <img src="./Images/frog.jpg" alt="Eat that frog">
+            <button name="book1" value="Eat That Frog" class="btn" type="submit">Get</button>
+        </div>
+        <div class="item">
+            <img src="./Images/doEpic.jpg" alt="Do Epic Sheet First">
+             <input type="hidden" name="book3" value="Atomic Habit">
+            <button class="btn" type="submit">Get</button>
+        </div>
+        <div class="item">
+            <img src="./Images/the deep.jpg" alt="Deep learning">
+             <input type="hidden" name="book1" value="Atomic Habit">
+            <button class="btn" type="submit">Get</button>
+        </div>
+
+    </form>
+    
+</body>
+</html>

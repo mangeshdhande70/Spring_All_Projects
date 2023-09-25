@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+   <div style="text-align:center;">
+     <h1 style="color:red;">Id or Password are Wrong please enter correct credential</h1><br/><br/>
+     <a href="login.html" target="body">|LOG IN PAGE|</a>
+     </div>
+</body>
+</html>

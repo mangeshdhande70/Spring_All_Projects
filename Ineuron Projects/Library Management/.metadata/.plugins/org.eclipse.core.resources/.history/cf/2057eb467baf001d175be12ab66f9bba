@@ -1,0 +1,9 @@
+package com.nalanda.service;
+
+import com.nalanda.dto.StudentDto;
+
+public interface IStudentService {
+	
+	public int register(StudentDto student);
+
+}

@@ -1,0 +1,53 @@
+package com.nalanda.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.nalanda.dto.Address;
+import com.nalanda.dto.StudentDto;
+import com.nalanda.service.IStudentService;
+import com.nalanda.servicefactory.StudentServiceFactory;
+
+
+@WebServlet(urlPatterns = "/register")
+public class RegisterServlet extends HttpServlet{
+	
+	
+	@Override
+	public void doPost(HttpServletRequest request , HttpServletResponse response) throws IOException {
+		
+		
+		IStudentService iStudentService = StudentServiceFactory.getStudentService();
+		
+	    
+		StudentDto student = new StudentDto();
+		
+		student.setName(request.getParameter("name"));
+		student.setEmail(request.getParameter("email"));
+		student.setCollegeName(request.getParameter("college"));
+		student.setPassword(request.getParameter("password"));
+		
+		Address address = new Address();
+		address.setStreet(request.getParameter("street"));
+		address.setCity(request.getParameter("city"));
+		address.setZipCode(Integer.parseInt(request.getParameter("zeepcode")));
+		
+		student.setAddress(address);
+		
+		
+		  iStudentService.register(student);
+		
+		
+		
+	}
+	
+	
+	
+	
+
+}

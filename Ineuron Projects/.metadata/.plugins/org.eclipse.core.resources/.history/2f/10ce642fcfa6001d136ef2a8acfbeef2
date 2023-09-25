@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registartin</title>
+    <link rel="stylesheet" type="text/css" href="registartion.css">
+</head>
+<body>
+    <div class="container">
+        <h1>STUDENT REGISTARTION</h1>
+        <form action="/register">
+          <input type="text" placeholder="Student Name" required>
+          <input type="text" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <input type="text" placeholder="College Name" required>
+          <input type="number" placeholder="Age" required>
+          <textarea placeholder="Address" required></textarea>
+          <button type="submit">REGISTER</button>
+        </form>
+      </div>
+</body>
+</html>

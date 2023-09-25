@@ -1,0 +1,15 @@
+package com.nalanda.studentdao;
+
+import com.nalanda.dto.Student;
+
+public class StudentDaoImpl implements IStudentDao  {
+	
+	public int register(Student student) {
+		
+		
+		
+		return 0;
+		
+	}
+
+}

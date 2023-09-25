@@ -1,0 +1,5 @@
+package com.nalanda.service;
+
+public interface INalandaService {
+
+}

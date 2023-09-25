@@ -1,0 +1,5 @@
+package com.nalanda.persisfactory;
+
+public class NalandDaoFactory {
+
+}

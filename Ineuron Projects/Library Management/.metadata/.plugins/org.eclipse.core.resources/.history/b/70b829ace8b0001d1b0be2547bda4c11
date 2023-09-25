@@ -1,0 +1,38 @@
+body{
+
+    margin: 0%;
+    padding: 0%;
+}
+
+.flex-container{
+
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    /* flex-wrap:wrap-reverse; */
+ 
+
+}
+
+.item{
+
+    margin: 20px 70px;
+    width: 120px;
+    height: 120px;
+    padding: auto;
+
+}
+
+.btn{
+    padding: 3px 150px;
+    background-color: rgb(73, 108, 248);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: medium;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-left: 30px;
+    text-align: center;
+}
+

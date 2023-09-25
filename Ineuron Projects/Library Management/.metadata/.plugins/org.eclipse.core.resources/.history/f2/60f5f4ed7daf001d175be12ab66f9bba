@@ -1,0 +1,10 @@
+package com.nalanda.service;
+
+import com.nalanda.dto.StudentDto;
+import com.nalanda.entity.Student;
+
+public interface IStudentService {
+	
+	public String register(Student student);
+
+}

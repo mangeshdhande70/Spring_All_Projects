@@ -1,0 +1,10 @@
+package com.api.dto;
+
+public class ResponseObject {
+	
+	private Integer userId;
+	private Integer id;
+	private String quiestesse;
+    private String body;
+
+}

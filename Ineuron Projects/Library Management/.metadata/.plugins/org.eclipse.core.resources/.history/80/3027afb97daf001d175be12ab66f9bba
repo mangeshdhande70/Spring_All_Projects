@@ -1,0 +1,28 @@
+package com.nalanda.studentdao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.nalanda.dto.StudentDto;
+import com.nalanda.hibernatesession.SessionFactoryClass;
+
+public class StudentDaoImpl implements IStudentDao  {
+	
+	public String register(StudentDto student) {
+		
+		Session session = SessionFactoryClass.getSession();
+		
+		Transaction transaction = session.beginTransaction();
+		
+		session.save(student);	
+		transaction.commit();
+		
+		session.close();
+		
+		System.out.println("Rigister");
+		
+		return null;
+		
+	}
+
+}

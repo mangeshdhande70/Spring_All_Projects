@@ -1,0 +1,12 @@
+package com.nalanda.service;
+
+import com.nalanda.dto.Student;
+
+public class StudentServiceImpl implements IStudentService {
+
+	public int register(Student student) {
+		
+		return 0;
+	}
+
+}

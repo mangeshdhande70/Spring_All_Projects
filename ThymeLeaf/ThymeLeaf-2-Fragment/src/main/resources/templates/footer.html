@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    
+<head>
+ 
+	<title>Document</title>
+</head>
+<body>
+
+
+   <footer th:fragment="footer1">
+   
+        <h1>Contact me on mail <blink th:text="${student.email}"></blink></h1><br/>
+        <h1>Contact Number <blink th:text="${student.contatcNo}"></blink></h1><br/>
+        <h1>Address <span th:text="${student.address}"></span></h1>
+   
+   </footer>
+
+
+
+</body>
+</html>

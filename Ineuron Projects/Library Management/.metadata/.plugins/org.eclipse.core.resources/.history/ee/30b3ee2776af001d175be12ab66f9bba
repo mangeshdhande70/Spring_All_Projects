@@ -1,0 +1,87 @@
+package com.nalanda.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.nalanda.dto.Address;
+
+@Entity
+@Table(name ="student")
+public class Student {
+	
+	@Id
+	@Column(name = "id")
+	private Integer studentId;
+	
+	@Column(name = "student_name")
+	private String name;
+	
+	@Column(name = "email")
+	private String email;
+	
+	@Column(name = "college_name")
+	private String collegeName;
+	
+	
+	
+	Address address;
+
+
+	public Student() {
+		super();
+	}
+
+
+	public Integer getStudentId() {
+		return studentId;
+	}
+
+
+	public void setStudentId(Integer studentId) {
+		this.studentId = studentId;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getCollegeName() {
+		return collegeName;
+	}
+
+
+	public void setCollegeName(String collegeName) {
+		this.collegeName = collegeName;
+	}
+
+
+	public Address getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Student [studentId=" + studentId + ", name=" + name + ", collegeName=" + collegeName + ", address="
+				+ address + "]";
+	}
+	
+	
+	
+	
+
+}

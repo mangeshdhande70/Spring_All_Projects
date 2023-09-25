@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;LibrabryManagement&apos; to &apos;Librabry DB&apos;" description="Rename resource &apos;LibrabryManagement&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/LibrabryManagement" name="Librabry DB" stamp="1676873010812" updateReferences="true"/>
+</session>

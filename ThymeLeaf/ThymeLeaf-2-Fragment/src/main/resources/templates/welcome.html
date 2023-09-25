@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    
+<head>
+	<title>Document</title>
+	<link rel="stylesheet" th:href="@{/home.css}" />
+</head>
+
+<body>
+
+    <!-- Best approach -->
+   <nav data-th-insert="~{header::navbar}"></nav>
+
+   <h1>Welcome to our web-site</h1>
+   
+   
+   <a th:href="@{https://www.google.com/}">Google</a><br/>
+   
+   <a th:href="@{https://www.google.com/}" th:target="_blank">In new Tab Google</a>
+   
+   
+   <h2>My Details</h2><br/>
+   
+   <h2>Footer</h2>
+   
+   <!--  footer==> file name  and footer1==> fragment name -->
+  <!--  <footer th:replace="~{footer::footer1}"></footer> -->
+   
+   <!--<footer th:replace="footer1::footer2"></footer> -->
+   
+  <!--  <footer th:insert="footer1::footer2"></footer>  -->
+ <!--   <footer th:include="footer1::footer2"></footer> -->
+ 
+  <footer th:insert="~{footer1::footer2}"></footer> 
+  
+</body>
+</html>

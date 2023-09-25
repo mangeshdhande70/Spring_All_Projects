@@ -1,0 +1,17 @@
+package com.nalanda.servicefactory;
+
+import com.nalanda.service.IStudentService;
+import com.nalanda.service.StudentServiceImpl;
+
+public abstract class ServiceFactory {
+	
+	
+	public static IStudentService getStudentService() {
+		
+		
+		return new StudentServiceImpl();
+		
+	}
+	
+
+}

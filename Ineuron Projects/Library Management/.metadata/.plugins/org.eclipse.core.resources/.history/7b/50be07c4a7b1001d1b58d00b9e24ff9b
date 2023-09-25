@@ -1,0 +1,41 @@
+package com.nalanda.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.nalanda.entity.Admin;
+import com.nalanda.hibernatesession.SessionFactoryClass;
+
+@WebServlet("/admin_reg")
+public class AdminRegServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	
+	
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	
+	Admin admin = new Admin();
+	admin.setEmail("Admin12@gmail.com");
+	admin.setName("Admin");
+	admin.setPassword("12345678");
+	
+	
+	 Session session = SessionFactoryClass.getSession();
+	 
+	 Transaction transaction = session.beginTransaction();
+        
+	 session.save(transaction)
+	
+
+
+}
+
+}

@@ -1,0 +1,35 @@
+package com.nalanda.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.nalanda.entityenum.Category;
+
+
+@Entity
+@Table(name = "Book")
+public class Book {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "book)id")
+	private Integer bookId;
+	
+	@Column(name = "book_name")
+	private String bookName;
+	
+	@Column(name = "author_name")
+	private String authorName;
+	
+	@Column(name = "category")
+	private Category category;
+	
+	@Column(name = "isAvailable")
+	private Boolean isAvailable;
+	
+	
+}

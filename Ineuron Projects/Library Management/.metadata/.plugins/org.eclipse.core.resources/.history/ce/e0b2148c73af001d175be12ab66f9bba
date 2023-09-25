@@ -1,0 +1,32 @@
+package com.nalanda.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.nalanda.service.IStudentService;
+import com.nalanda.servicefactory.ServiceFactory;
+
+
+@WebServlet(urlPatterns = "/register")
+public class RegisterServlet extends HttpServlet{
+	
+	
+	@Override
+	public void doPost(HttpServletRequest request , HttpServletResponse response) {
+		
+		
+		IStudentService iStudentService = ServiceFactory.getStudentService();
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+
+}

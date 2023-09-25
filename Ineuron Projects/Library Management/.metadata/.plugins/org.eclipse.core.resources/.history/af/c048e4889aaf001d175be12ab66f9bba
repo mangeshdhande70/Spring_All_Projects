@@ -1,0 +1,44 @@
+package com.nalanda.filters;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import com.nalanda.dto.StudentDto;
+import com.nalanda.hibernatesession.SessionFactoryClass;
+
+
+@WebFilter("/login")
+public class AuthFilter implements Filter{
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+	  
+		
+		Session session = SessionFactoryClass.getSession();
+		
+		Transaction transaction = session.beginTransaction();
+		
+	
+	
+		
+		
+		
+		
+		session.get(StudentDto.class, email);
+		
+		
+		
+	}
+
+}

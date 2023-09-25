@@ -1,0 +1,65 @@
+package com.nalanda.filters;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpFilter;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.nalanda.entity.Admin;
+import com.nalanda.hibernatesession.SessionFactoryClass;
+
+
+@WebFilter("/admin_login")
+public class AdminFilter extends HttpFilter implements Filter {
+       
+   
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		
+		PrintWriter out = response.getWriter();
+		Admin admin = null;
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("adminloginerr.html");
+		
+		
+		Session session = SessionFactoryClass.getSession();
+		
+		
+		
+		Transaction transaction = session.beginTransaction();
+		
+		int id = Integer.parseInt(request.getParameter("id"));
+		
+		try {
+		 admin = session.get(Admin.class, id);
+		 
+		}catch (Exception e) {
+			out.println("Admin Not found");
+		}finally {
+			transaction.commit();
+			session.close();
+		}
+		
+		if (admin!=null && admin.getPassword().equals(request.getParameter("password"))) {
+			chain.doFilter(request, response);
+			
+		}else {
+			requestDispatcher.forward(request, response);
+		}
+		
+		
+		
+		
+	}
+
+	
+
+}

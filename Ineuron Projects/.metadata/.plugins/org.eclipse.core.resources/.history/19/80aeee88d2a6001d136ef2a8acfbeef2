@@ -1,0 +1,12 @@
+package com.nalanda.service;
+
+public class NalandServiceImpl implements INalandaService {
+
+	@Override
+	public String registerStudent(String name, String email, String password, String collegeName, int age,
+			String address) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.api.client;
+
+import feign.Param;
+import feign.RequestLine;
+
+public interface FeingClient {
+	
+	 @RequestLine("GET /endpoint/{id}")
+	 MyResponseObject getEndpointData(@Param("id") String id);
+
+}

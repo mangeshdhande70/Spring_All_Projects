@@ -1,0 +1,47 @@
+package com.nalanda.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.nalanda.service.INalandaService;
+import com.nalanda.servicefactory.NalandaServiceFactory;
+
+
+@WebServlet("/register")
+public class RegistrationController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	String msg ="";
+	
+	INalandaService iNalandaService = NalandaServiceFactory.getNalandaService();
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		RequestDispatcher requestDispatcher = null;
+		
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String pass = request.getParameter("password");
+	    int age = Integer.parseInt(request.getParameter("age"));
+	    String address = request.getParameter("address");
+	    
+	    msg = iNalandaService.registerStudent(name, email, pass, name, age, address);
+	    
+	    if (msg.equalsIgnoreCase("success")) {
+	    	requestDispatcher = request.getRequestDispatcher("./successregister.html");
+	    	requestDispatcher.forward(request, response);
+		}else {
+			requestDispatcher = request.getRequestDispatcher("./failedregister.html");
+			requestDispatcher.forward(request, response);
+		}
+	    
+	
+	}
+
+}

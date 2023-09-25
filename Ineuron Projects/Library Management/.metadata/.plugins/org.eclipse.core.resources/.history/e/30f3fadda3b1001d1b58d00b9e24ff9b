@@ -1,0 +1,5 @@
+package com.nalanda.controller;
+
+public class AdminRegistrationServlet {
+
+}

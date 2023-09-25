@@ -1,0 +1,8 @@
+package com.nalanda.persistence;
+
+public interface INalandaDao {
+	
+	public String registerStudent(String name, String email, String password, String collegeName, int age,
+			String address);
+
+}

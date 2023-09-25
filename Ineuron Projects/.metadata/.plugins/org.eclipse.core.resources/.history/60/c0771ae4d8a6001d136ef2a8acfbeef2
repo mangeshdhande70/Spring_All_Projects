@@ -1,0 +1,9 @@
+#jdbcUrl=jdbc:mysql:///librabrymanagement
+#dataSource.url=root
+#dataSource.password=Md7$#1998
+#
+#
+
+jdbcUrl=jdbc:mysql:///college
+dataSource.user=root
+dataSource.password=Md7$#1998

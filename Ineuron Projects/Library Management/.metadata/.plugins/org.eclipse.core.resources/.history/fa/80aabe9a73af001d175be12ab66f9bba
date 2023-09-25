@@ -1,0 +1,9 @@
+package com.nalanda.studentdao;
+
+import com.nalanda.dto.Student;
+
+public interface IStudentDao {
+	
+	public int register(Student student);
+
+}

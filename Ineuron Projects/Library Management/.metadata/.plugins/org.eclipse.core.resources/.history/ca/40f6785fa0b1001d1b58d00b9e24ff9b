@@ -1,0 +1,5 @@
+package com.nalanda.entity;
+
+public class Book {
+
+}

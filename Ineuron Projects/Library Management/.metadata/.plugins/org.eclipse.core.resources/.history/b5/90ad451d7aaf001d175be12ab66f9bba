@@ -1,0 +1,42 @@
+package com.nalanda.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.nalanda.service.IStudentService;
+import com.nalanda.servicefactory.ServiceFactory;
+
+
+@WebServlet(urlPatterns = "/register")
+public class RegisterServlet extends HttpServlet{
+	
+	
+	@Override
+	public void doPost(HttpServletRequest request , HttpServletResponse response) throws IOException {
+		
+		
+		IStudentService iStudentService = ServiceFactory.getStudentService();
+		
+		PrintWriter out = response.getWriter();
+		
+		out.println("Inside Servlet");
+		
+		
+		System.out.println(request.getRemoteAddr());
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+
+}

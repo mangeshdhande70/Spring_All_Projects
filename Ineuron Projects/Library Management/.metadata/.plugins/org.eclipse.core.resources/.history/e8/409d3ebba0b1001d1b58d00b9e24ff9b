@@ -1,0 +1,97 @@
+package com.nalanda.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.nalanda.entityenum.Category;
+
+
+@Entity
+@Table(name = "Book")
+public class Book {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "book)id")
+	private Integer bookId;
+	
+	@Column(name = "book_name")
+	private String bookName;
+	
+	@Column(name = "author_name")
+	private String authorName;
+	
+	@Column(name = "category")
+	private Category category;
+	
+	@Column(name = "isAvailable")
+	private Boolean isAvailable;
+	
+	
+	
+	
+	
+
+	public Book() {
+		super();
+	}
+	
+	
+	
+
+	public Book(Integer bookId, String bookName, String authorName, Category category, Boolean isAvailable) {
+		super();
+		this.bookId = bookId;
+		this.bookName = bookName;
+		this.authorName = authorName;
+		this.category = category;
+		this.isAvailable = isAvailable;
+	}
+
+
+
+
+	public String getBookName() {
+		return bookName;
+	}
+
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+
+	public String getAuthorName() {
+		return authorName;
+	}
+
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public Boolean getIsAvailable() {
+		return isAvailable;
+	}
+
+	public void setIsAvailable(Boolean isAvailable) {
+		this.isAvailable = isAvailable;
+	}
+
+	public Integer getBookId() {
+		return bookId;
+	}
+	
+	
+	
+	
+}

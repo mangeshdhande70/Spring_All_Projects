@@ -1,0 +1,32 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Login Form</title>    
+    <link rel="stylesheet" type="text/css" href="login.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>    
+<body>    
+    <div class="container">
+         <form class="login"  action=".\login" method="POST">
+            <h2>Login</h2><br>      
+            <label><b>Email Id</b></label>    
+            <input type="text" name="email" class="email" placeholder="Type your email">   
+            <label><b>Password</b></label>    
+            <input type="Password" name="Pass" class="Pass" placeholder="Type your password">    
+            <br/>       
+            <a id="soc" href="#" style="font-size: small;">Forgot password?</a><br/>   
+            <button class="btn">LOGIN</button><br/>
+            <p style="text-align: center; font-size: small;">or</p>
+            <a href='registration.html'>
+            <button class="btn" style="background-color: aquamarine;">Register </button> </a><br/>
+            <div class="social">
+                <a id="soc" href="https://www.facebook.com/login.php/" class="fa fa-facebook"></a>
+                <a id="soc" href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D" class="fa fa-twitter"></a>
+                <a id="soc" href="https://accounts.google.com/v3/signin/identifier?dsh=S-1022817560%3A1675163909482033&authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F&ec=GAlAwAE&hl=en&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession" class="fa fa-google"></a>
+            </div>
+            </form>
+        </div> 
+    </div>
+</div>    
+</body>    
+</html>     

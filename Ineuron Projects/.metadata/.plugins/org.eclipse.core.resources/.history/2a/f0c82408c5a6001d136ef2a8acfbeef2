@@ -1,0 +1,25 @@
+package com.naland.model;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.sql.Connection;
+
+import com.zaxxer.hikari.HikariConfig;
+
+public abstract class JDBCConnection {
+	
+	public static Connection jdbConnection() throws FileNotFoundException {
+		
+		String path = "D:\\Spring All\\Ineuron Projects\\Librabry Management\\src\\main\\java\\com\\naland\\model\\application.properties";
+		
+		
+		FileInputStream fileInputStream = new FileInputStream(file);
+		
+		HikariConfig config = new HikariConfig(fileInputStream);
+		
+		
+		
+	}
+
+}

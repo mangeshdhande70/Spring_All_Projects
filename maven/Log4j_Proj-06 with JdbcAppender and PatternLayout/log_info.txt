@@ -1,0 +1,6 @@
+2023-04-10 20:48:16 DEBUG ineuron.JdbcApp       main main       0 28  Control entering main()
+2023-04-10 20:48:16 DEBUG ineuron.JdbcApp       main main       13 36  Driver Loaded Succesfully
+2023-04-10 20:48:16 INFO ineuron.JdbcApp       main main       631 42  Connetion Established successfully
+2023-04-10 20:48:16 DEBUG ineuron.JdbcApp       main main       637 45  statement object created
+2023-04-10 20:48:16 INFO ineuron.JdbcApp       main main       652 49  Resultset objected successfully
+2023-04-10 20:48:16 DEBUG ineuron.JdbcApp       main main       656 90  Control stopped

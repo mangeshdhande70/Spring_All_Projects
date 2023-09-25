@@ -1,0 +1,27 @@
+package com.nalanda.model;
+
+import java.io.FileNotFoundException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+public abstract class JDBCConnection {
+	
+	public static Connection jdbConnection() throws FileNotFoundException, SQLException {
+		
+		String path = "D:\\Spring All\\Ineuron Projects\\LibrabryManagement\\src\\main\\java\\com\\nalanda\\model\\application.properties";
+	
+		HikariConfig config = new HikariConfig(path);
+		
+		@SuppressWarnings("resource")
+		HikariDataSource dataSource = new HikariDataSource(config);
+		
+		return dataSource.getConnection();
+		
+		
+		
+	}
+
+}

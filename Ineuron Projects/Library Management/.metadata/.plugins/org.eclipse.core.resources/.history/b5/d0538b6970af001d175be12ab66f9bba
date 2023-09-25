@@ -1,0 +1,5 @@
+package com.nalanda.servicefactory;
+
+public abstract class ServiceFactory {
+
+}

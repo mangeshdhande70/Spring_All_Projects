@@ -1,0 +1,47 @@
+
+body{
+	height: 100%;
+    width: 100%;
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(bluebg.jpg);
+}
+
+
+.container {
+    width: 500px; 
+    height: 400px;
+    margin: auto ;  
+    padding: 30px;  
+    background-color: #ffff;
+    text-align: center;
+    
+  }
+
+  h1 {
+    /* margin-bottom: 20px; */
+    color: #120101;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    width: 100%;
+  }
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: rgb(228, 106, 97);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: medium;
+    cursor: pointer;
+    margin-top: 20px;
+  }

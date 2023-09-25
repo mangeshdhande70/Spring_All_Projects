@@ -1,0 +1,20 @@
+package com.nalanda.service;
+
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
+
+import com.nalanda.persisfactory.NalandDaoFactory;
+import com.nalanda.persistence.INalandaDao;
+
+public class NalandServiceImpl implements INalandaService {
+	
+	INalandaDao iNalandaDao = NalandDaoFactory.getNalandaDao();
+
+	@Override
+	public String registerStudent(String name, String email, String password, String collegeName, int age,
+			String address) throws FileNotFoundException, SQLException {
+		
+		return iNalandaDao.registerStudent(name, email, password, collegeName, age, address);
+	}
+
+}

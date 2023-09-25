@@ -1,0 +1,33 @@
+
+server:
+  port: 9999
+
+spring:
+  application:
+    name: ADMIN-SERVICE
+    
+    
+  config:
+    import: 
+    
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
+      
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  
+        
+
+
+   
+   
+      

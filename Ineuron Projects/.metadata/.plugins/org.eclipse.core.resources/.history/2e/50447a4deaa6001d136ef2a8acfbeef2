@@ -1,0 +1,85 @@
+package com.nalanda.controller;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.mysql.cj.protocol.Resultset;
+import com.nalanda.model.JDBCConnection;
+import com.nalanda.service.INalandaService;
+import com.nalanda.servicefactory.NalandaServiceFactory;
+
+@WebServlet("/register")
+public class RegistrationController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	ResultSet resultset = null;
+	String query = "SELECT * FROM register WHERE email=?";
+
+	String msg = "";
+
+	INalandaService iNalandaService = NalandaServiceFactory.getNalandaService();
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		RequestDispatcher requestDispatcher = null;
+
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String pass = request.getParameter("password");
+		int age = Integer.parseInt(request.getParameter("age"));
+		String address = request.getParameter("address");
+
+		try {
+			connection = JDBCConnection.jdbConnection();
+
+			if (connection != null)
+				preparedStatement = connection.prepareStatement(query);
+
+			preparedStatement.setString(1, email);
+			
+			resultset = preparedStatement.executeQuery();
+
+			if ( resultset.next()) {
+				String emailFromDb = resultset.getString(3);
+				if (!emailFromDb.equalsIgnoreCase(email)) {
+					msg = iNalandaService.registerStudent(name, email, pass, name, age, address);
+				}else {
+					msg += "alreadylogin";
+				}
+			}else {
+				msg = iNalandaService.registerStudent(name, email, pass, name, age, address);
+			}
+
+		} catch (FileNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		if (msg.equalsIgnoreCase("success")) {
+			requestDispatcher = request.getRequestDispatcher("./successregister.html");
+			requestDispatcher.forward(request, response);
+		} else if (msg.equalsIgnoreCase("alreadylogin")) {
+			requestDispatcher = request.getRequestDispatcher("./alreadylogin.html");
+			requestDispatcher.forward(request, response);
+		} else {
+			requestDispatcher = request.getRequestDispatcher("./failedregister.html");
+			requestDispatcher.forward(request, response);
+		}
+
+	}
+
+}

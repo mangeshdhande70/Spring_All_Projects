@@ -1,0 +1,24 @@
+package com.api.service;
+
+import com.api.client.FeingClient;
+
+import feign.Feign;
+import feign.gson.GsonDecoder;
+
+
+public class ApiService {
+	
+	private final String bASE_URL = "https://jsonplaceholder.typicode.com/posts";
+	
+	   // Replace "BASE_API_URL" with the actual base URL of the API
+	FeingClient api = Feign.builder()
+                    .decoder(new GsonDecoder()) // Use Gson for JSON decoding
+                    .target(FeingClient.class, "BASE_API_URL");
+
+    // Make API calls using the defined methods in the interface
+	ResponseObject response = api.getEndpointData("123");
+
+    // Process the API response
+    System.out.println(response);
+
+}

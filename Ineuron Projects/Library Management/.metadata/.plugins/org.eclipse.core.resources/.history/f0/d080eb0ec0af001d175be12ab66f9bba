@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" type="text/css" href="../css/books.css">
+</head>
+<body>
+
+
+    <form  method="POST" action="./book" class="flex-container">
+
+        <div class="item">
+            <img src="../images/atomicHabit.jfif" alt="Atomic habit">
+            <button class="btn" type="submit">Get</button>
+        </div>
+        <div class="item">
+            <img src="../books/atomicHabit.jfif" alt="Atomic habit">
+            <button class="btn" type="submit">Get</button>
+        </div>
+        <div class="item">
+            <img src="../books/atomicHabit.jfif" alt="Atomic habit">
+            <button class="btn" type="submit">Get</button>
+        </div>
+        <div class="item">
+            <img src="../books/atomicHabit.jfif" alt="Atomic habit">
+            <button class="btn" type="submit">Get</button>
+        </div>
+
+    </form>
+    
+</body>
+</html>

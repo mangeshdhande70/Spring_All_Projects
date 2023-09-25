@@ -1,0 +1,73 @@
+package com.nalanda.controller;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.nalanda.model.JDBCConnection;
+
+@WebServlet("/login")
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	ResultSet resultset = null;
+	RequestDispatcher requestDispatcher = null;
+
+	String sqlSelectQuery = "SELECT * FROM register where email=?";
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String requestEmail = request.getParameter("email");
+		String requestPassword = request.getParameter("password");
+
+		try {
+			connection = JDBCConnection.jdbConnection();
+
+			if (connection != null)
+				preparedStatement = connection.prepareStatement(sqlSelectQuery);
+
+			preparedStatement.setString(1, requestEmail);
+
+			resultset = preparedStatement.executeQuery();
+
+			String uRIString = request.getRequestURI();
+			String pathString = request.getPathInfo();
+			System.out.println(uRIString);
+			System.out.println(pathString);
+
+			if (resultset.next()) {
+				String passFromDB = resultset.getString(4);
+				if (passFromDB.equals(requestPassword)) {
+					System.out.println("hello");
+					requestDispatcher = request.getRequestDispatcher("./successlogin.html");
+					requestDispatcher.forward(request, response);
+				}
+
+			} else {
+//				System.out.println("not hello");
+				requestDispatcher = request.getRequestDispatcher("./failedlogin.html");
+				requestDispatcher.forward(request, response);
+			}
+			System.out.println("im out");
+
+		} catch (FileNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
