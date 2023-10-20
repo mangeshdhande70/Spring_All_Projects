@@ -1,0 +1,52 @@
+
+server:
+  port: 8084
+
+
+spring:
+  application:
+    name: API-GATEWAY
+  main:
+    web-application-type: reactive
+    
+  
+  cloud:
+    gateway:
+      routes:
+      - id: ORDER-SERVICE
+        uri: lb://ORDER-SERVICE
+        predicates:
+        - Path=/order/**
+        
+      - id: USER-SERVICE
+        uri: lb://USER-SERVICE
+        predicates:
+        - Path=/user/**, /cart/**  
+      
+      - id: ADMIN-SERVICE
+        uri: lb://ADMIN-SERVICE
+        predicates:
+        - Path=/admin/**
+        
+        
+      
+    
+    
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/     
+      
+      
+     
+          
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  

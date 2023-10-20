@@ -1,0 +1,12 @@
+
+
+server:
+  port: 9990
+
+spring:
+  data:
+    elasticsearch:
+      username: elastic
+      password: X=SKzh0V4x4tOJAGG5yP
+      host: 127.0.0.1
+      port: 9200

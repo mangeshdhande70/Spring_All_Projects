@@ -1,0 +1,16 @@
+server:
+  port: 9990
+  
+  
+spring:
+  application:
+    name: AUTH-SERVICE
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+      
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/      

@@ -1,0 +1,13 @@
+server:
+  port: 8761
+  
+eureka:
+  client:
+    register-with-eureka: false
+    registry-fetch-interval-seconds: 30
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://admin:password@localhost:8761/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 30
+  
